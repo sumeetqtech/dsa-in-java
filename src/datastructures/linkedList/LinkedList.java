@@ -15,6 +15,7 @@ public class LinkedList {
 
         /**
          * Constructor
+         *
          * @param value - value for a node
          */
         Node(int value) {
@@ -24,6 +25,7 @@ public class LinkedList {
 
     /**
      * Constructor to build a new linked list instance
+     *
      * @param value - the first value to be inserted into the linked list
      */
     public LinkedList(int value) {
@@ -68,6 +70,7 @@ public class LinkedList {
     /**
      * Add a node to the end of the LinkedList
      * This operation is O(1) which is constant in nature
+     *
      * @param value - the value to be added
      */
     public void append(int value) {
@@ -84,6 +87,7 @@ public class LinkedList {
     /**
      * Add a node to the start of the LinkedList
      * This operation is O(1) which is constant in nature
+     *
      * @param value - the value to be added
      */
     public void prepend(int value) {
@@ -101,6 +105,7 @@ public class LinkedList {
      * removes last item from the LinkedList
      * This operation is O(n) since we need to iterate
      * through all the items within the linked list
+     *
      * @return Node
      */
     public Node removeLast() {
@@ -129,6 +134,7 @@ public class LinkedList {
     /**
      * removes first item from the LinkedList
      * This operation is O(1) which is constant in nature
+     *
      * @return Node
      */
     public Node removeFirst() {
@@ -151,6 +157,7 @@ public class LinkedList {
      * Returns a node at the specified index within the LinkedList
      * This operation is O(n) since we need to iterate
      * through 'n' number the items within the linked list
+     *
      * @param index - the index to get the value from
      * @return Node
      */
@@ -169,6 +176,7 @@ public class LinkedList {
      * Replaces the value at a specified index within the LinkedList
      * This operation is O(n) since we need to iterate
      * through 'n' number the items within the linked list to change its value
+     *
      * @param index - the index to change
      * @param value - the new value to be added at that index
      * @return Node
@@ -184,6 +192,8 @@ public class LinkedList {
 
     /**
      * Inserts a node at a specified index within the LinkedList
+     * This operation is O(n).
+     *
      * @param index - the index to insert at
      * @param value - the new value to be inserted at that index
      * @return boolean
@@ -209,6 +219,7 @@ public class LinkedList {
 
     /**
      * Removes a node at a specified index within the LinkedList
+     *
      * @param index - the index at which the value needs to be removed
      * @return Node
      */
@@ -241,7 +252,7 @@ public class LinkedList {
         Node before = null;
         Node after;
 
-        for (int i = 0; i < length ; i++) {
+        for (int i = 0; i < length; i++) {
             after = current.next;
             current.next = before;
             before = current;
