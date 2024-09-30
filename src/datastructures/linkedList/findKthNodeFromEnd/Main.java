@@ -8,6 +8,6 @@ public class Main {
         myList.append(4);
         myList.append(5);
 
-        System.out.println("Kth Node from End: " + myList.findKthFromEnd(2).value);
+        System.out.println("The 2nd Kth Node from End: " + myList.findKthFromEnd(2).value);
     }
 }

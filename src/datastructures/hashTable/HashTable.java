@@ -16,10 +16,10 @@ public class HashTable {
         }
     }
 
-    private int size = 7;
-    private Node[] dataMap;
+    private final Node[] dataMap;
 
     public HashTable() {
+        int size = 7;
         dataMap = new Node[size];
     }
 

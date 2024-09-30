@@ -21,13 +21,13 @@ public class Main {
         System.out.println("RemovedFirst: " + doublyLinkedList.removeFirst().value);
         doublyLinkedList.printList();
 
-        System.out.println("Get at index: " + doublyLinkedList.get(5).value);
+        System.out.println("Get at index 5 = " + doublyLinkedList.get(5).value);
         doublyLinkedList.printList();
 
-        System.out.println("Insert at index: " + doublyLinkedList.insert(4, 5));
+        System.out.println("Insert at index 4: " + doublyLinkedList.insert(4, 5));
         doublyLinkedList.printList();
 
-        System.out.println("Insert at index: " + doublyLinkedList.remove(4).value);
+        System.out.println("Remove at index 4 = " + doublyLinkedList.remove(4).value);
         doublyLinkedList.printList();
     }
 }

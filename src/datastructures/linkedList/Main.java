@@ -5,6 +5,8 @@ public class Main {
         LinkedList linkedList = new LinkedList(1);
         linkedList.append(2);
         linkedList.append(3);
+        linkedList.append(4);
+        linkedList.append(5);
         linkedList.prepend(0);
         linkedList.printList();
 
@@ -13,21 +15,20 @@ public class Main {
         System.out.println("RemovedFirst: " + linkedList.removeFirst().value);
         linkedList.printList();
 
-        linkedList.getLength();
-        System.out.println("Get 1: " + linkedList.get(1).value);
+        System.out.println("Get at index 3: " + linkedList.get(3).value);
 
         System.out.println("Set: " + linkedList.set(0, 0));
         System.out.println("Set: " + linkedList.set(1, 1));
-
-        System.out.println("Insert at index: " + linkedList.insert(2, 3));
-        System.out.println("Insert at index: " + linkedList.insert(2, 2));
-        linkedList.getLength();
         linkedList.printList();
 
-        System.out.println("Remove at Index: " + linkedList.remove(1).value);
+        System.out.println("Insert at index 2: " + linkedList.insert(2, 1));
+        System.out.println("Insert at index 2: " + linkedList.insert(2, 2));
         linkedList.printList();
-        linkedList.getLength();
 
+        System.out.println("Removed at index 3: " + linkedList.remove(3).value);
+        linkedList.printList();
+
+        System.out.println("Reversed LinkedList:");
         linkedList.reverse();
         linkedList.printList();
     }

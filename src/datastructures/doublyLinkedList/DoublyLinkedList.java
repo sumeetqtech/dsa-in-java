@@ -59,24 +59,6 @@ public class DoublyLinkedList {
         length++;
     }
 
-    public Node removeLast() {
-        if (length == 0) {
-            return null;
-        }
-
-        Node last = tail;
-        if (length == 1) {
-            tail = null;
-            head = null;
-        } else {
-            tail = tail.prev;
-            tail.next = null;
-            last.prev = null;
-        }
-        length--;
-        return last;
-    }
-
     public void prepend(int value) {
         Node newNode = new Node(value);
         if (length == 0) {
@@ -87,6 +69,24 @@ public class DoublyLinkedList {
         }
         head = newNode;
         length++;
+    }
+
+    public Node removeLast() {
+        if (length == 0) {
+            return null;
+        }
+
+        Node last = tail;
+        if (length == 1) {
+            head = null;
+            tail = null;
+        } else {
+            tail = tail.prev;
+            tail.next = null;
+            last.prev = null;
+        }
+        length--;
+        return last;
     }
 
     public Node removeFirst() {
@@ -112,7 +112,6 @@ public class DoublyLinkedList {
         if (index < 0 || index >= length) {
             return null;
         }
-
         Node current = head;
         if (index < length / 2) {
             for (int i = 0; i < index; i++) {
@@ -140,20 +139,18 @@ public class DoublyLinkedList {
         if (index < 0 || index > length) {
             return false;
         }
-
         if (index == 0) {
             prepend(value);
         } else if (index == length) {
             append(value);
         } else {
             Node newNode = new Node(value);
-            Node before = get(index - 1);
-            Node after = before.next;
-
+            Node current = get(index);
+            Node before = current.prev;
             newNode.prev = before;
-            newNode.next = after;
+            newNode.next = current;
             before.next = newNode;
-            after.prev = newNode;
+            current.prev = newNode;
             length++;
         }
         return true;
@@ -163,23 +160,21 @@ public class DoublyLinkedList {
         if (index < 0 || index >= length) {
             return null;
         }
-
         if (index == 0) {
             return removeFirst();
         } else if (index == length - 1) {
             return removeLast();
-        } else {
-            Node before = get(index - 1);
-            Node current = before.next;
-            Node after = current.next;
-
-            before.next = after;
-            after.prev = before;
-            current.prev = null;
-            current.next = null;
-            length--;
-
-            return current;
         }
+        Node current = get(index);
+        Node before = current.prev;
+        Node after = current.next;
+
+        before.next = after;
+        after.prev = before;
+        current.prev = null;
+        current.next = null;
+        length--;
+
+        return current;
     }
 }

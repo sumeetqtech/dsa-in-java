@@ -80,14 +80,11 @@ public class LinkedList {
         }
 
         while(fast != null) {
-
             System.out.println("Slow: " + slow.value);
             System.out.println("Fast: " + fast.value);
 
             slow = slow.next;
             fast = fast.next;
-
-
         }
 
         return slow;

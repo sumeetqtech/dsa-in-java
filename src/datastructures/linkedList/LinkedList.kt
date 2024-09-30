@@ -143,17 +143,21 @@ class LinkedListKotlin {
             return null
         }
 
-        if (index == 0) {
-            return removeFirst()
-        } else if (index == length - 1) {
-            return removeLast()
-        } else {
-            val prev = get(index - 1)
-            val temp = prev!!.next
-            prev.next = temp!!.next
-            temp.next = null
-            length--
-            return temp
+        when (index) {
+            0 -> {
+                return removeFirst()
+            }
+            length - 1 -> {
+                return removeLast()
+            }
+            else -> {
+                val prev = get(index - 1)
+                val temp = prev!!.next
+                prev.next = temp!!.next
+                temp.next = null
+                length--
+                return temp
+            }
         }
     }
 
