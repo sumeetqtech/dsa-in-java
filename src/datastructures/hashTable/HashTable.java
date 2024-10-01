@@ -43,6 +43,7 @@ public class HashTable {
         char[] keyChar = key.toCharArray();
         for (char c : keyChar) {
             hash = (hash + (int) c * 23) % dataMap.length;
+//            System.out.println("hash: " + hash);
         }
         return hash;
     }
