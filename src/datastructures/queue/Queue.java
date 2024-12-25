@@ -5,7 +5,7 @@ public class Queue {
     private Node last;
     private int length;
 
-    static class Node {
+    public static class Node {
         int value;
         Node next;
 

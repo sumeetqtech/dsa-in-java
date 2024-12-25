@@ -80,7 +80,7 @@ public class LinkedList {
         while (current != null) {
             if (values.contains(current.value)) {
                 previous.next = current.next;
-                length -= 1;
+                length--;
             } else {
                 values.add(current.value);
                 previous = current;

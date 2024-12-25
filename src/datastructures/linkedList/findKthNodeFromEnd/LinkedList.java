@@ -5,7 +5,7 @@ public class LinkedList {
     private Node head;
     private Node tail;
 
-    class Node {
+    public static class Node {
         int value;
         Node next;
 
